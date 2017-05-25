@@ -1,5 +1,72 @@
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
+/*import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.location.LocationManager;
+import android.os.AsyncTask;
+import android.provider.ContactsContract;
+import android.widget.Toast;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.CursorLoader;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.Loader;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.ContactsContract;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import edu.aku.hassannaqvi.leap_randomization.R;
+import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
+import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
+
+
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -61,13 +128,17 @@ import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
+
+import android.app.Activity;
+
+public class LoginActivity extends Activity {
 
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
+
+  /*  private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
     // District Spinner
@@ -87,11 +158,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
+   */
     /*@BindView(R.id.spUC)
     Spinner spUC;
     */
 
-    SharedPreferences sharedPref;
+   /* SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
 
     String DirectoryName;
@@ -99,7 +171,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+/*    private UserLoginTask mAuthTask = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +234,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         ucList = db.getAllUC();*/
 
         // Spinner Drop down elements
-        lables = new ArrayList<String>();
+  /*      lables = new ArrayList<String>();
         lables.add("K. Abdullah");
         lables.add("Quetta");
         lables.add("Pishin");
@@ -212,7 +284,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             Log.i("Key - Value:", ucList.get(i).getTownId() + " - " + ucList.get(i).getUCId() + " - " + ucList.get(i).getUCName() + " - " + ucList.get(i).getID());
 
         }*/
-        valuesnlabels = new HashMap<String, String>();
+  /*      valuesnlabels = new HashMap<String, String>();
         valuesnlabels.put("11", "K. Abdullah");
         valuesnlabels.put("12", "Quetta");
         valuesnlabels.put("13", "Pishin");
@@ -259,7 +331,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 //        DB backup
 
-        dbBackup();
+ /*       dbBackup();
     }
 
     public void dbBackup() {
@@ -351,7 +423,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+  /*  private void attemptLogin() {
         if (mAuthTask != null) {
             return;
         }
@@ -385,7 +457,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cancel = true;
         }*/
 
-        if (cancel) {
+/*        if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -411,7 +483,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     /**
      * Shows the progress UI and hides the login form.
      */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+
+
+ /*   @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
@@ -496,7 +570,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+ /*   public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
@@ -584,6 +658,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mAuthTask = null;
             showProgress(false);
         }
-    }
+    }*/
 }
+
 

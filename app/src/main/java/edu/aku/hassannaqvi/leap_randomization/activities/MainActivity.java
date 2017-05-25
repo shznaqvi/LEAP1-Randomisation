@@ -1,55 +1,10 @@
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Handler;
-import android.text.InputType;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.leap_randomization.R;
-import edu.aku.hassannaqvi.leap_randomization.contracts.HFacilitiesContract;
-import edu.aku.hassannaqvi.leap_randomization.contracts.LHWsContract;
-import edu.aku.hassannaqvi.leap_randomization.contracts.TehsilsContract;
-import edu.aku.hassannaqvi.leap_randomization.core.AndroidDatabaseManager;
-import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
-import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetHFacilities;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetLHWs;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetTehsil;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUCs;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
-import edu.aku.hassannaqvi.leap_randomization.getclasses.GetVillages;
-import edu.aku.hassannaqvi.leap_randomization.syncclasses.SyncForms;
 
 public class MainActivity extends Activity {
 
-    public static String TAG = MainActivity.class.getSimpleName();
+   /* public static String TAG = MainActivity.class.getSimpleName();
     public List<String> lhwName;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     @BindView(R.id.adminsec)
@@ -72,10 +27,10 @@ public class MainActivity extends Activity {
     AlertDialog.Builder builder;
     String m_Text = "";
     private String rSumText = "";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+*/
+/*    @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      /* super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
@@ -209,17 +164,20 @@ public class MainActivity extends Activity {
                 mN02.setAdapter(new ArrayAdapter<>(getBaseContext(),
                         android.R.layout.simple_spinner_dropdown_item, hfNames));
             }
-
-            @Override
+*/
+          /*  @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
 
         mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
+         */
+
+         /* @Override
+
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.hfCode = hfCodes.get(position);
+          /*      AppMain.hfCode = hfCodes.get(position);
 
                 lhwName = new ArrayList<String>();
                 lhws = new HashMap<String, String>();
@@ -235,9 +193,10 @@ public class MainActivity extends Activity {
                         .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 mN03.setAdapter(psuAdapter);
 
-            }
+           */
+}
 
-            @Override
+        /*    @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
@@ -304,13 +263,57 @@ public class MainActivity extends Activity {
         Intent iA = new Intent(this, SectionHActivity.class);
 
         startActivity(iA);
-*/
-    }
 
-    public void openB(View v) {
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;}import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+
+import edu.aku.hassannaqvi.leap_randomization.contracts.HFacilitiesContract;
+import edu.aku.hassannaqvi.leap_randomization.contracts.LHWsContract;
+import edu.aku.hassannaqvi.leap_randomization.contracts.TehsilsContract;
+import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetHFacilities;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetLHWs;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetTehsil;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUCs;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetVillages;
+
+public void openB(View v) {
   /*      Intent iB = new Intent(this, SectionBActivity.class);
         startActivity(iB);*/
-    }
+/*
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+
+import edu.aku.hassannaqvi.leap_randomization.contracts.HFacilitiesContract;
+import edu.aku.hassannaqvi.leap_randomization.contracts.LHWsContract;
+import edu.aku.hassannaqvi.leap_randomization.contracts.TehsilsContract;
+import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetHFacilities;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetLHWs;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetTehsil;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUCs;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
+import edu.aku.hassannaqvi.leap_randomization.getclasses.GetVillages;
 
     /*public void openC(View v) {
         Intent iC = new Intent(this, SectionCActivity.class);
@@ -327,21 +330,21 @@ public class MainActivity extends Activity {
         startActivity(iD);
 */    //}
 
-    public void openF(View v) {
+// public void openF(View v) {
       /*  Intent iD = new Intent(this, SectionFActivity.class);
         startActivity(iD);*/
-    }
+// }
 
    /* public void openIM(View v) {
         Intent iIM = new Intent(this, SectionIMActivity.class);
         startActivity(iIM);
     }*/
 
-    public void openG(View v) {
+//  public void openG(View v) {
       /*  Intent iG = new Intent(this, SectionGActivity.class);
         startActivity(iG);*/
-    }
-
+//    }
+/*
     public void openEnd(View v) {
         Intent iEnd = new Intent(this, EndingActivity.class);
         startActivity(iEnd);
@@ -358,6 +361,7 @@ public class MainActivity extends Activity {
         startActivity(cluster_list);
 
     }*/
+    /*
     public void syncServer(View view) {
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
@@ -532,6 +536,7 @@ public class MainActivity extends Activity {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             AppMain.lhwCode = lhws.get(lhwName.get(position));
+                            */
                 /*Collection<LHWsContract> lhwc = db.getAllLhwsByHf(AppMain.hh01txt);
                 for (LHWsContract l : lhwc) {
                     Log.d(TAG, "onItemSelected: " + l.getLHWCode() + " -" + AppMain.hh02txt);
@@ -548,7 +553,7 @@ public class MainActivity extends Activity {
 
                     }
                 }*/
-                        }
+                  /*      }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> parent) {
@@ -561,3 +566,4 @@ public class MainActivity extends Activity {
         }
     }
 }
+*/

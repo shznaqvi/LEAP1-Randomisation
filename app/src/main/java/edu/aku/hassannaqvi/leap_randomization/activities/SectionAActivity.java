@@ -2,8 +2,8 @@ package edu.aku.hassannaqvi.leap_randomization.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -21,8 +21,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.leap_randomization.R;
-import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
 import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
+
+import static android.content.ContentValues.TAG;
 
 public class SectionAActivity extends Activity {
 
@@ -105,8 +106,8 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-
-                startActivity(new Intent(this, EndingActivity.class));
+                Intent EndingActivity = new Intent(this, EndingActivity.class);
+                startActivity(EndingActivity);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -142,7 +143,7 @@ public class SectionAActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        long updcount = db.addForm(AppMain.fc);
+      /*  long updcount = db.addForm(AppMain.fc);
 
         AppMain.fc.setID(String.valueOf(updcount));
 
@@ -155,7 +156,8 @@ public class SectionAActivity extends Activity {
 
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
         return true;
 
     }
@@ -197,7 +199,7 @@ public class SectionAActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
         JSONObject sa = new JSONObject();
 
         sa.put("sitenumber", sitenumber.getText().toString());
@@ -221,7 +223,7 @@ public class SectionAActivity extends Activity {
 
         //  setGPS();
 
-        AppMain.fc.setsA(String.valueOf(sa));
+        //  AppMain.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -232,7 +234,7 @@ public class SectionAActivity extends Activity {
         if (sitenumber.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.siteNumber), Toast.LENGTH_SHORT).show();
             sitenumber.setError("This data is required");
-            // Log.d(TAG, " sitenumber :empty ");
+            Log.d(TAG, " sitenumber :empty ");
             return false;
         } else {
             sitenumber.setError(null);
@@ -242,7 +244,7 @@ public class SectionAActivity extends Activity {
         if (mrnumber.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mrnumber), Toast.LENGTH_SHORT).show();
             mrnumber.setError("This data is required");
-            // Log.d(TAG, " mrnumber :empty ");
+            Log.d(TAG, " mrnumber :empty ");
             return false;
         } else {
             mrnumber.setError(null);
@@ -252,7 +254,7 @@ public class SectionAActivity extends Activity {
         if (r01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r01), Toast.LENGTH_SHORT).show();
             r01.setError("This data is required");
-            // Log.d(TAG, " r01 :empty ");
+            Log.d(TAG, " r01 :empty ");
             return false;
         } else {
             r01.setError(null);
@@ -262,7 +264,7 @@ public class SectionAActivity extends Activity {
         if (r02.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r02), Toast.LENGTH_SHORT).show();
             r0202.setError("This Data is required");
-            //Log.d(TAG, " r02 : not selected ");
+            Log.d(TAG, " r02 : not selected ");
             return false;
         } else {
             r0202.setError(null);
@@ -272,7 +274,7 @@ public class SectionAActivity extends Activity {
         if (r0501.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) + getString(R.string.r0501), Toast.LENGTH_SHORT).show();
             r0501.setError("This data is required");
-            // Log.d(TAG, " r0501 :empty ");
+            Log.d(TAG, " r0501 :empty ");
             return false;
         } else {
             r0501.setError(null);
@@ -282,7 +284,7 @@ public class SectionAActivity extends Activity {
         if (r0502.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) + getString(R.string.r0502), Toast.LENGTH_SHORT).show();
             r0502.setError("This data is required");
-            // Log.d(TAG, " r0502 :empty ");
+            Log.d(TAG, " r0502 :empty ");
             return false;
         } else {
             r0502.setError(null);
@@ -292,7 +294,7 @@ public class SectionAActivity extends Activity {
         if (r0503.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) + getString(R.string.r0503), Toast.LENGTH_SHORT).show();
             r0503.setError("This data is required");
-            // Log.d(TAG, " r0503 :empty ");
+            Log.d(TAG, " r0503 :empty ");
             return false;
         } else {
             r0503.setError(null);
@@ -302,7 +304,7 @@ public class SectionAActivity extends Activity {
         if (r07.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r07), Toast.LENGTH_SHORT).show();
             r07.setError("This data is required");
-            // Log.d(TAG, " r07 :empty ");
+            Log.d(TAG, " r07 :empty ");
             return false;
         } else {
             r07.setError(null);
@@ -312,7 +314,7 @@ public class SectionAActivity extends Activity {
         if (r08.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r08), Toast.LENGTH_SHORT).show();
             r08.setError("This data is required");
-            // Log.d(TAG, " r08 :empty ");
+            Log.d(TAG, " r08 :empty ");
             return false;
         } else {
             r08.setError(null);
@@ -322,7 +324,7 @@ public class SectionAActivity extends Activity {
         if (r0901.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r09) + getString(R.string.r0901), Toast.LENGTH_SHORT).show();
             r0901.setError("This data is required");
-            // Log.d(TAG, "r0901 :empty  ");
+            Log.d(TAG, "r0901 :empty  ");
             return false;
         } else {
             r0901.setError(null);
@@ -331,7 +333,7 @@ public class SectionAActivity extends Activity {
         if ((Integer.parseInt(r0901.getText().toString()) < 12) || (Integer.parseInt(r0901.getText().toString()) > 26)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0901), Toast.LENGTH_LONG).show();
             r0901.setError("Range is 12-26 days");
-            // Log.i(TAG, "r0901: Range is 12-26 weeks");
+            Log.d(TAG, "r0901: Range is 12-26 weeks");
             return false;
         } else {
             r0901.setError(null);
@@ -340,7 +342,7 @@ public class SectionAActivity extends Activity {
         if (r0902.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_SHORT).show();
             r0902.setError("This data is required");
-            // Log.d(TAG, "r0902 :empty  ");
+            Log.d(TAG, "r0902 :empty  ");
             return false;
         } else {
             r0902.setError(null);
@@ -350,7 +352,7 @@ public class SectionAActivity extends Activity {
         if (r10.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r10), Toast.LENGTH_SHORT).show();
             r1002.setError("This Data is required");
-            //Log.d(TAG, " r10 : not selected ");
+            Log.d(TAG, " r10 : not selected ");
             return false;
         } else {
             r1002.setError(null);
@@ -360,7 +362,7 @@ public class SectionAActivity extends Activity {
         if (r11.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r11), Toast.LENGTH_SHORT).show();
             r1102.setError("This Data is required");
-            //Log.d(TAG, " r10 : not selected ");
+            Log.d(TAG, " r10 : not selected ");
             return false;
         } else {
             r1102.setError(null);
@@ -370,7 +372,7 @@ public class SectionAActivity extends Activity {
         if (r12.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r12), Toast.LENGTH_SHORT).show();
             r1202.setError("This Data is required");
-            //Log.d(TAG, " r12 : not selected ");
+            Log.d(TAG, " r12 : not selected ");
             return false;
         } else {
             r1202.setError(null);
@@ -380,7 +382,7 @@ public class SectionAActivity extends Activity {
         if (r16.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r16), Toast.LENGTH_SHORT).show();
             r16.setError("This data is required");
-            // Log.d(TAG, " r16 :empty ");
+            Log.d(TAG, " r16 :empty ");
             return false;
         } else {
             r16.setError(null);
