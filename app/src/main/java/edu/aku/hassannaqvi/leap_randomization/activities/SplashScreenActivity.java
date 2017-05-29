@@ -1,7 +1,16 @@
 
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.MotionEvent;
+import android.view.View;
+
+import edu.aku.hassannaqvi.leap_randomization.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -14,25 +23,39 @@ public class SplashScreenActivity extends Activity {
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
-    // private static final boolean AUTO_HIDE = true;
+    private static final boolean AUTO_HIDE = true;
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
      */
-    //  private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     /**
      * Some older devices needs a small delay between UI widget updates
      * and a change of the status and navigation bar.
      */
-    //  private static final int UI_ANIMATION_DELAY = 300;
-    //   private static int SPLASH_TIME_OUT = 3000;
-    //  private final Handler mHideHandler = new Handler();
-    //  private View mContentView;
-  /*  private final Runnable mHidePart2Runnable = new Runnable() {
+    private static final int UI_ANIMATION_DELAY = 300;
+    private static int SPLASH_TIME_OUT = 3000;
+    private final Handler mHideHandler = new Handler();
+    /**
+     * Touch listener to use for in-layout UI controls to delay hiding the
+     * system UI. This is to prevent the jarring behavior of controls going away
+     * while interacting with activity UI.
+     */
+    private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            if (AUTO_HIDE) {
+                delayedHide(AUTO_HIDE_DELAY_MILLIS);
+            }
+            return false;
+        }
+    };
+    private View mContentView;
+    private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
         public void run() {
- //           // Delayed removal of status and navigation bar
+            // Delayed removal of status and navigation bar
 
             // Note that some of these constants are new as of API 16 (Jelly Bean)
             // and API 19 (KitKat). It is safe to use them, as they are inlined
@@ -64,20 +87,6 @@ public class SplashScreenActivity extends Activity {
             hide();
         }
     };
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-   /* private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +105,7 @@ public class SplashScreenActivity extends Activity {
              * want to show case your app logo / company
              */
 
-   /*         @Override
+        @Override
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
@@ -123,7 +132,6 @@ public class SplashScreenActivity extends Activity {
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
-    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
@@ -171,9 +179,8 @@ public class SplashScreenActivity extends Activity {
      * Schedules a call to hide() in [delay] milliseconds, canceling any
      * previously scheduled calls.
      */
-  /*  private void delayedHide(int delayMillis) {
-        mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
-    }
-*/
-}
+   private void delayedHide(int delayMillis) {
+       mHideHandler.removeCallbacks(mHideRunnable);
+       mHideHandler.postDelayed(mHideRunnable, delayMillis);
+   }
+        }

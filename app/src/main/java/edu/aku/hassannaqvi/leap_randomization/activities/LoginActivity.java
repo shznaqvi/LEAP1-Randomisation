@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
-/*import android.annotation.TargetApi;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -131,14 +131,14 @@ import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
 
 import android.app.Activity;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
 
-  /*  private static final String[] DUMMY_CREDENTIALS = new String[]{
+   private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
     // District Spinner
@@ -158,12 +158,12 @@ public class LoginActivity extends Activity {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-   */
+
     /*@BindView(R.id.spUC)
     Spinner spUC;
     */
 
-   /* SharedPreferences sharedPref;
+    SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
 
     String DirectoryName;
@@ -171,7 +171,7 @@ public class LoginActivity extends Activity {
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-/*    private UserLoginTask mAuthTask = null;
+    private UserLoginTask mAuthTask = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,7 +234,7 @@ public class LoginActivity extends Activity {
         ucList = db.getAllUC();*/
 
         // Spinner Drop down elements
-  /*      lables = new ArrayList<String>();
+      lables = new ArrayList<String>();
         lables.add("K. Abdullah");
         lables.add("Quetta");
         lables.add("Pishin");
@@ -284,7 +284,7 @@ public class LoginActivity extends Activity {
             Log.i("Key - Value:", ucList.get(i).getTownId() + " - " + ucList.get(i).getUCId() + " - " + ucList.get(i).getUCName() + " - " + ucList.get(i).getID());
 
         }*/
-  /*      valuesnlabels = new HashMap<String, String>();
+        valuesnlabels = new HashMap<String, String>();
         valuesnlabels.put("11", "K. Abdullah");
         valuesnlabels.put("12", "Quetta");
         valuesnlabels.put("13", "Pishin");
@@ -329,9 +329,9 @@ public class LoginActivity extends Activity {
 */
 
 
-//        DB backup
+//       DB backup
 
- /*       dbBackup();
+       dbBackup();
     }
 
     public void dbBackup() {
@@ -423,7 +423,7 @@ public class LoginActivity extends Activity {
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-  /*  private void attemptLogin() {
+    private void attemptLogin() {
         if (mAuthTask != null) {
             return;
         }
@@ -457,7 +457,7 @@ public class LoginActivity extends Activity {
             cancel = true;
         }*/
 
-/*        if (cancel) {
+      if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -485,7 +485,7 @@ public class LoginActivity extends Activity {
      */
 
 
- /*   @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+   @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
@@ -570,7 +570,7 @@ public class LoginActivity extends Activity {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
- /*   public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+  public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
@@ -658,7 +658,7 @@ public class LoginActivity extends Activity {
             mAuthTask = null;
             showProgress(false);
         }
-    }*/
+    }
 }
 
 

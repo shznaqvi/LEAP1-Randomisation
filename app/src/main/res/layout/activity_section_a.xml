@@ -16,9 +16,18 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_height="6dp"
+            android:background="@color/grey_dialog_box" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Main" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@color/grey_dialog_box" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,15 +42,10 @@
             android:textStyle="bold"
             tools:typeface="serif" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:text="@string/siteNumber" />
 
         <EditText
@@ -52,7 +56,6 @@
             android:hint="@string/siteNumber"
             android:inputType="number"
             android:maxLength="5" />
-
 
         <TextView
             android:layout_width="match_parent"
@@ -139,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="@string/digits"
-            android:hint="@string/r03" />
+            android:hint="@string/r04" />
 
         <TextView
             android:layout_width="match_parent"

@@ -90,6 +90,10 @@ public class SectionAActivity extends Activity {
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
 
+
+
+
+
         }
 
     @OnClick(R.id.btnNext)
@@ -219,7 +223,6 @@ public class SectionAActivity extends Activity {
         sa.put("r010", r1001.isChecked() ? "1" : r1002.isChecked() ? "2" : "0");
         sa.put("r11", r1101.isChecked() ? "1" : r1102.isChecked() ? "2" : "0");
         sa.put("r12", r1201.isChecked() ? "1" : r1202.isChecked() ? "2" : "0");
-        sa.put("r16", r16.getText().toString());
 
         //  setGPS();
 
@@ -271,17 +274,18 @@ public class SectionAActivity extends Activity {
         }
 
         // =================== Q5 ====================
-        if (r0501.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) + getString(R.string.r0501), Toast.LENGTH_SHORT).show();
+
+        if ((r0501.getText().toString().isEmpty()) && (r0502.getText().toString().isEmpty()) &&(r0503.getText().toString().isEmpty())){
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) , Toast.LENGTH_SHORT).show();
             r0501.setError("This data is required");
-            Log.d(TAG, " r0501 :empty ");
+            Log.d(TAG, " r05 :empty ");
             return false;
         } else {
             r0501.setError(null);
         }
 
 
-        if (r0502.getText().toString().isEmpty()) {
+     /*   if (r0502.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r05) + getString(R.string.r0502), Toast.LENGTH_SHORT).show();
             r0502.setError("This data is required");
             Log.d(TAG, " r0502 :empty ");
@@ -299,7 +303,7 @@ public class SectionAActivity extends Activity {
         } else {
             r0503.setError(null);
         }
-
+*/
         // =================== Q7 ====================
         if (r07.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r07), Toast.LENGTH_SHORT).show();

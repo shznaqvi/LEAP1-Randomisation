@@ -23,7 +23,12 @@
         <activity
             android:name="edu.aku.hassannaqvi.leap_randomization.activities.SplashScreenActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">  <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+    </activity>
 
         <activity
             android:name="edu.aku.hassannaqvi.leap_randomization.core.AndroidDatabaseManager"
@@ -41,13 +46,8 @@
         <activity
             android:name="edu.aku.hassannaqvi.leap_randomization.activities.SectionAActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:windowSoftInputMode="adjustResize"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name="edu.aku.hassannaqvi.leap_randomization.activities.EndingActivity"
