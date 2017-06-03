@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LEAP1: Baseline</string>
+    <string name="app_name">LEAP1: Randomization Worksheet</string>
     <string name="section_info">  بنیادی معلومات </string>
     <string name="section_A">  گھر کی شناخت </string>
 
@@ -35,7 +35,7 @@
     <string name="r0701">(g/L) </string>
     <string name="r08">اگر Hb ≤110g/L ہوتو سیرم فریڈن  20µg/L > نہونا لازمی ہے  </string>
     <string name="r0801">(g/L) </string>
-    <string name="r09"> 12 ہفتوں سے زیادہ اور 26 ہفتوں  یا اس سے کم ہونا لازمی ہے </string>
+    <string name="r09"> حمل کا دورانیہ؟ 12 ہفتوں سے زیادہ اور 26 ہفتوں  یا اس سے کم ہونا لازمی ہے </string>
     <string name="r0901"> ہفتے </string>
     <string name="r0902">ایام</string>
     <string name="r10">کیا رضا مندی لکھوالی گئی ہے (must be yes) (ہاں میں ہونا لازمی ہے ) </string>

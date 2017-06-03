@@ -16,11 +16,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.leap_randomization.R;
+import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
 import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -90,7 +92,7 @@ public class SectionAActivity extends Activity {
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
 
-
+        r06.setMaxDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_18YEAR) + (AppMain.MILLISECONDS_IN_DAY)));
 
 
 
@@ -336,7 +338,7 @@ public class SectionAActivity extends Activity {
 
         if ((Integer.parseInt(r0901.getText().toString()) < 12) || (Integer.parseInt(r0901.getText().toString()) > 26)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0901), Toast.LENGTH_LONG).show();
-            r0901.setError("Range is 12-26 days");
+            r0901.setError("Range is 12-26 weeks");
             Log.d(TAG, "r0901: Range is 12-26 weeks");
             return false;
         } else {
