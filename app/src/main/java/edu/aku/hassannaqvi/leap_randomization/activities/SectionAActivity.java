@@ -3,7 +3,10 @@ package edu.aku.hassannaqvi.leap_randomization.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -93,6 +96,29 @@ public class SectionAActivity extends Activity {
         ButterKnife.bind(this);
 
         r06.setMaxDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_18YEAR) + (AppMain.MILLISECONDS_IN_DAY)));
+
+        r0901.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.valueOf(r0901.getText().toString().isEmpty() ? "0" : r0901.getText().toString()) == 26) {
+                    r0902.setVisibility(View.GONE);
+                    r0902.setText(null);
+                } else {
+                    r0902.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
 
@@ -275,6 +301,24 @@ public class SectionAActivity extends Activity {
             r0202.setError(null);
         }
 
+        if (r03.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r03), Toast.LENGTH_SHORT).show();
+            r03.setError("This data is required");
+            Log.d(TAG, " r03 :empty ");
+            return false;
+        } else {
+            r03.setError(null);
+        }
+
+        if (r04.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r04), Toast.LENGTH_SHORT).show();
+            r04.setError("This data is required");
+            Log.d(TAG, " r04 :empty ");
+            return false;
+        } else {
+            r04.setError(null);
+        }
+
         // =================== Q5 ====================
 
         if ((r0501.getText().toString().isEmpty()) && (r0502.getText().toString().isEmpty()) &&(r0503.getText().toString().isEmpty())){
@@ -316,7 +360,8 @@ public class SectionAActivity extends Activity {
             r07.setError(null);
         }
 
-        if ((Integer.valueOf(r07.getText().toString()) < 70) || (Integer.valueOf(r0902.getText().toString()) > 115)) {
+        if ((Integer.valueOf(r07.getText().toString().isEmpty() ? "0" : r07.getText().toString()) < 70)
+                || (Integer.valueOf(r07.getText().toString().isEmpty() ? "0" : r07.getText().toString()) > 115)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.r07), Toast.LENGTH_LONG).show();
             r07.setError("Range is 70 g/L - 115 g/L ");
             Log.d(TAG, "r07: Range is 70 g/L - 115 g/L days");
@@ -368,6 +413,7 @@ public class SectionAActivity extends Activity {
         }
 
 
+
         if (r0902.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_SHORT).show();
             r0902.setError("This data is required");
@@ -377,15 +423,14 @@ public class SectionAActivity extends Activity {
             r0902.setError(null);
         }
 
-        if ((Integer.valueOf(r0902.getText().toString()) < 0) || (Integer.valueOf(r0902.getText().toString()) > 7)) {
+        if ((Integer.valueOf(r0902.getText().toString()) < 0) || (Integer.valueOf(r0902.getText().toString()) > 6)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_LONG).show();
-            r0902.setError("Range is 0-7 days");
-            Log.d(TAG, "r0902: Range is 0-7 days");
+            r0902.setError("Range is 0-6 days");
+            Log.d(TAG, "r0902: Range is 0-6 days");
             return false;
         } else {
             r0902.setError(null);
         }
-
 
 
         // =================== Q10 ====================

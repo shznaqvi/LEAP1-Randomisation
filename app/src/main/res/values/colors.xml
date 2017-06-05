@@ -10,5 +10,9 @@
     <color name="white">#efefef</color>
 
     <color name="grey_dialog_box">#808080</color>
+
+    <color name="disabled_color">#000000</color>
 </resources>
+
+
 
