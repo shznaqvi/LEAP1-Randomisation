@@ -316,6 +316,16 @@ public class SectionAActivity extends Activity {
             r07.setError(null);
         }
 
+        if ((Integer.valueOf(r07.getText().toString()) < 70) || (Integer.valueOf(r0902.getText().toString()) > 115)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.r07), Toast.LENGTH_LONG).show();
+            r07.setError("Range is 70 g/L - 115 g/L ");
+            Log.d(TAG, "r07: Range is 70 g/L - 115 g/L days");
+            return false;
+        } else {
+            r07.setError(null);
+        }
+
+
         // =================== Q8 ====================
         if (r08.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r08), Toast.LENGTH_SHORT).show();
@@ -325,6 +335,16 @@ public class SectionAActivity extends Activity {
         } else {
             r08.setError(null);
         }
+
+        if ((Integer.valueOf(r07.getText().toString()) <= 110) && (Integer.valueOf(r08.getText().toString()) > 20)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.r08), Toast.LENGTH_LONG).show();
+            r08.setError("Can not be less than 20 ug/L");
+            Log.d(TAG, "r08: Can not be less than 20 ug/L");
+            return false;
+        } else {
+            r08.setError(null);
+        }
+
 
         // =================== Q9 ====================
         if (r0901.getText().toString().isEmpty()) {
@@ -336,14 +356,17 @@ public class SectionAActivity extends Activity {
             r0901.setError(null);
         }
 
-        if ((Integer.parseInt(r0901.getText().toString()) < 12) || (Integer.parseInt(r0901.getText().toString()) > 26)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0901), Toast.LENGTH_LONG).show();
-            r0901.setError("Range is 12-26 weeks");
-            Log.d(TAG, "r0901: Range is 12-26 weeks");
-            return false;
-        } else {
-            r0901.setError(null);
+        if ((Integer.valueOf(r0901.getText().toString()) < 12) || (Integer.valueOf(r0901.getText().toString()) > 26)) {
+            if (Integer.valueOf(r0901.getText().toString()) == 0) {
+                r0901.setError(null);
+            } else {
+                Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0901), Toast.LENGTH_LONG).show();
+                r0901.setError("Range is 12-26 weeks");
+                Log.d(TAG, "r0901: Range is 12-26 weeks");
+                return false;
+            }
         }
+
 
         if (r0902.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_SHORT).show();
@@ -353,6 +376,17 @@ public class SectionAActivity extends Activity {
         } else {
             r0902.setError(null);
         }
+
+        if ((Integer.valueOf(r0902.getText().toString()) < 0) || (Integer.valueOf(r0902.getText().toString()) > 7)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_LONG).show();
+            r0902.setError("Range is 0-7 days");
+            Log.d(TAG, "r0902: Range is 0-7 days");
+            return false;
+        } else {
+            r0902.setError(null);
+        }
+
+
 
         // =================== Q10 ====================
         if (r10.getCheckedRadioButtonId() == -1) {
