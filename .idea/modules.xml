@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LEAP-Randomization.iml" filepath="$PROJECT_DIR$/LEAP-Randomization.iml" />
       <module fileurl="file://$PROJECT_DIR$/LEAP1-Randomisation.iml" filepath="$PROJECT_DIR$/LEAP1-Randomisation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

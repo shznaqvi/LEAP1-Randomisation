@@ -281,7 +281,7 @@ public class SectionAActivity extends Activity {
             mrnumber.setError(null);
         }
 
-        // =================== Q3 ====================
+        // =================== Q1 ====================
         if (r01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r01), Toast.LENGTH_SHORT).show();
             r01.setError("This data is required");

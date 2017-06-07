@@ -33,7 +33,7 @@
     <string name="r06">ماں کی پیدائش کی تاریخ(18 سال یا  زیادہ ہونا لازمی ہے)  </string>
     <string name="r07">ہیموگلوبن (must be ≤115g/L and ≥70g/L) </string>
     <string name="r0701">(g/L) </string>
-    <string name="r08">اگر Hb ≤110g/L ہوتو سیرم فریڈن  20µg/L > نہونا لازمی ہے  </string>
+    <string name="r08">اگر Hb ≤110g/L ہوتو سیرم فریڈن  20µg/L > ہونا لازمی ہے  </string>
     <string name="r0801">(g/L) </string>
     <string name="r09"> حمل کا دورانیہ؟ 12 ہفتوں سے زیادہ اور 26 ہفتوں  یا اس سے کم ہونا لازمی ہے </string>
     <string name="r0901"> ہفتے </string>
