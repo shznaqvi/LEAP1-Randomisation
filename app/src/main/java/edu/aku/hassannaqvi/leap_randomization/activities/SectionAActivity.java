@@ -1,13 +1,12 @@
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -19,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,10 +26,11 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.leap_randomization.R;
 import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
 import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 import static android.content.ContentValues.TAG;
 
-public class SectionAActivity extends Activity {
+public class SectionAActivity extends AppCompatActivity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
@@ -57,7 +57,7 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.r0503)
     EditText r0503;
     @BindView(R.id.r06)
-    DatePicker r06;
+    DatePickerInputEditText r06;
     @BindView(R.id.r07)
     EditText r07;
     @BindView(R.id.r08)
@@ -95,7 +95,17 @@ public class SectionAActivity extends Activity {
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
 
-        r06.setMaxDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_18YEAR) + (AppMain.MILLISECONDS_IN_DAY)));
+        //r06.setMaxDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_18YEAR) + (AppMain.MILLISECONDS_IN_DAY)));
+        String maxDate18Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_18YEAR) + (AppMain.MILLISECONDS_IN_DAY)));
+        r06.setManager(getSupportFragmentManager());
+        r06.setMaxDate(maxDate18Years);
+
+        r06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                r06.onFocusChange(v, true);
+            }
+        });
 
         r0901.addTextChangedListener(new TextWatcher() {
             @Override
@@ -243,7 +253,7 @@ public class SectionAActivity extends Activity {
         sa.put("r0501", r0501.getText().toString());
         sa.put("r0502", r0502.getText().toString());
         sa.put("r0503", r0503.getText().toString());
-        sa.put("r06", new SimpleDateFormat("dd-MM-yyyy").format(r06.getCalendarView().getDate()));
+        sa.put("r06", r06.getText().toString());
         sa.put("r07", r07.getText().toString());
         sa.put("r08", r08.getText().toString());
         sa.put("r0901", r0901.getText().toString());
@@ -350,6 +360,15 @@ public class SectionAActivity extends Activity {
             r0503.setError(null);
         }
 */
+
+        if (r06.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r06), Toast.LENGTH_SHORT).show();
+            r06.setError("This data is required");
+            Log.d(TAG, " r06 :empty ");
+            return false;
+        } else {
+            r06.setError(null);
+        }
         // =================== Q7 ====================
         if (r07.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r07), Toast.LENGTH_SHORT).show();

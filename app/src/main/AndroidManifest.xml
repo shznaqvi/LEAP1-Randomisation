@@ -46,6 +46,7 @@
         <activity
             android:name="edu.aku.hassannaqvi.leap_randomization.activities.SectionAActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize"/>
 
 
