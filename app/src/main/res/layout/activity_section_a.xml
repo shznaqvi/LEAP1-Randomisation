@@ -197,7 +197,7 @@
             android:focusable="false"
             android:hint="@string/r06"
             android:textColor="@android:color/black"
-            app:dateFormat="dd/MM/yyyy" />
+            app:dateFormat="dd-MM-yyyy" />
 
 
         <TextView
