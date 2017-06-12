@@ -100,12 +100,6 @@ public class SectionAActivity extends AppCompatActivity {
         r06.setManager(getSupportFragmentManager());
         r06.setMaxDate(maxDate18Years);
 
-        r06.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                r06.onFocusChange(v, true);
-            }
-        });
 
         r0901.addTextChangedListener(new TextWatcher() {
             @Override
