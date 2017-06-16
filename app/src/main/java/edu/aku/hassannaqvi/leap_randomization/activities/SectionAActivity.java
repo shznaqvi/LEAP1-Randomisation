@@ -3,10 +3,7 @@ package edu.aku.hassannaqvi.leap_randomization.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -101,28 +98,7 @@ public class SectionAActivity extends AppCompatActivity {
         r06.setMaxDate(maxDate18Years);
 
 
-        r0901.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                if (Integer.valueOf(r0901.getText().toString().isEmpty() ? "0" : r0901.getText().toString()) == 26) {
-                    r0902.setVisibility(View.GONE);
-                    r0902.setText(null);
-                } else {
-                    r0902.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
 
 
@@ -424,8 +400,6 @@ public class SectionAActivity extends AppCompatActivity {
                 return false;
             }
         }
-
-
 
         if (r0902.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r09) + getString(R.string.r0902), Toast.LENGTH_SHORT).show();
