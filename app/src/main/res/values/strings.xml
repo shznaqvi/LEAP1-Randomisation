@@ -3,49 +3,48 @@
     <string name="section_info">  بنیادی معلومات </string>
     <string name="section_A">  گھر کی شناخت </string>
 
-    <string name="yes"> ہاں </string>
-    <string name="no"> نہیں </string>
+    <string name="yes"> ہاں yes</string>
+    <string name="no">no نہیں </string>
     <string name="dkn"> معلوم نہیں </string>
-    <string name="other"> دیگر (وضاحت کریں) </string>
+    <string name="other">other دیگر (وضاحت کریں) </string>
     <string name="none"> کچھ نہیں </string>
     <string name="nr"> No Response </string>
     <string name="days"> دن </string>
 
 
-    <string name="nextSection">اگلا سیکشن</string>
-    <string name="endForm">اختتام</string>
+    <string name="nextSection">NextSectionاگلا سیکشن</string>
+    <string name="endForm">EndFormاختتام</string>
     <string name="digits">1234567890.,+=-qwertyuiopasdfghjklzxcvbnm ?%#@!&amp;QWERTYUIOPASDFGHJKLZXCVBNM</string>
-
-    <string name="Main">کیا حمل کے دوران فولاد کی کمی کو لیکٹوفرین سے علاج کے ذریعے ٹھیک کیا جانا چاہیے؟رینڈ مائزکنڑول ٹرائل</string>
-    <string name="sectionA">اہلیت کی تفصیلات</string>
-    <string name="siteNumber">اسٹیڈی سائٹ کانمبر</string>
-    <string name="mrnumber">والدہ کا میڈیکل ریکارڈ</string>
-    <string name="r01">شریک کا نام</string>
-    <string name="r02"> Group </string>
-    <string name="r0201">Group A </string>
-    <string name="r0202"> Group B </string>
-    <string name="r03"> شوہر کا نام </string>
-    <string name="r04">مکمل پتہ</string>
-    <string name="r05">رابطہ نمبر</string>
-    <string name="r0501">بیوی</string>
-    <string name="r0502"> شوہر </string>
-    <string name="r0503"> PTCL </string>
-    <string name="r06">ماں کی پیدائش کی تاریخ(18 سال یا  زیادہ ہونا لازمی ہے)  </string>
-    <string name="r07">Haemoglobin (must be ≤115g/L and ≥70g/L) </string>
+    <string name="Main">Should we treat iron deficiency anaemia of pregnancy with Lactoferrin? کیا حمل کے دوران فولاد کی کمی کو لیکٹوفرین سے علاج کے ذریعے ٹھیک کیا جانا چاہیے؟رینڈ مائزکنڑول ٹرائل</string>
+    <string name="sectionA">ELIGIBILITY DETAILS  اہلیت کی تفصیلات</string>
+    <string name="siteNumber">Site Number اسٹیڈی سائٹ کانمبر</string>
+    <string name="mrnumber">Mother’s MR والدہ کا میڈیکل ریکارڈ</string>
+    <string name="r01">Name of participant شریک کا نام</string>
+    <string name="r02">گروپ Group </string>
+    <string name="r0201">Group A گروپ اے  </string>
+    <string name="r0202"> Group B گروپ بی </string>
+    <string name="r03"> شوہر کا نام Husband’s Name </string>
+    <string name="r04">مکمل پتہ Complete Address </string>
+    <string name="r05">Contact Number رابطہ نمبر</string>
+    <string name="r0501">Wife بیوی</string>
+    <string name="r0502"> شوہر Husband</string>
+    <string name="r0503"> PTCL گھر کا نمبر</string>
+    <string name="r06">Mother’s Date of birth(must be ≥18 years) (ماں کی پیدائش کی تاریخ(18 سال یا زیادہ ہونا لازمی ہے  </string>
+    <string name="r07">ہیموگلوبن  (Haemoglobin (must be ≤115g/L and ≥70g/L </string>
     <string name="r0701">(g/L) </string>
-    <string name="r08">If Hb ≤110g/L:Serum Ferritin(must be 20µg/L)</string>
+    <string name="r08">If Hb ≤110g/L:Serum Ferritin(must be 20µg/L)   </string>
     <string name="r0801">(g/L) </string>
-    <string name="r09"> Current gestation? (must be 26 weeks and > 120weeks ) </string>
-    <string name="r0901"> Weeks </string>
-    <string name="r0902">Days</string>
-    <string name="r10">کیا رضا مندی لکھوالی گئی ہے (ہاں میں ہونا لازمی ہے )  </string>
-    <string name="r11"> کیا مریض کو دودھ یا فولاد کی مصنوعات سے الر جی ہے ؟(نہیں میں ہونا لازمی ہے )</string>
-    <string name="r12">کیا پچھلے 30 دن کے دوران نس کے ذریعے آئرن کا ٹیکہ لگایا گیا ہے (نہیں میں ہونا لازمی ہے )   </string>
+    <string name="r09"> Current gestation? (must be ≤26 weeks 6 days and > 12 weeks )حمل کا دورانیہ؟ </string>
+    <string name="r0901"> Weeks ہفتے</string>
+    <string name="r0902">Days  ایام</string>
+    <string name="r10">Has written informed consent been obtained?(must be yes)  کیا رضا مندی لکھوالی گئی ہے (ہاں میں ہونا لازمی ہے  </string>
+    <string name="r11"> کیا مریض کو دودھ یا فولاد کی مصنوعات سے الر جی ہے ؟(نہیں میں ہونا لازمی ہے) Does the patient have a known allergy to milk proteins or to iron products (must be no </string>
+    <string name="r12">کیا پچھلے 30 دن کے دوران نس کے ذریعے آئرن کا ٹیکہ لگایا گیا ہے (نہیں میں ہونا لازمی ہے )   Has this patient had a prior treatment with intravenous iron within 30 days</string>
     <string name="Part2">Part 2 Randomization</string>
     <string name="r13"> اندراج کی تاریخ </string>
     <string name="r14"> اسٹیڈی نمبر </string>
     <string name="r15"> عملہ کا نام جس نے مریض کو ترتیب دیا </string>
-    <string name="r16">معالج کا نام جس نے اہلیت کو تصدیق کیا </string>
+    <string name="r16">معالج کا نام جس نے اہلیت کو تصدیق کیا Name of Clinician confirming Eligibility</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

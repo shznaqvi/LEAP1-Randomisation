@@ -241,7 +241,7 @@ public class SectionAActivity extends AppCompatActivity {
 
     public boolean ValidateForm() {
 
-        // =================== Q1 ====================
+        // =================== site number ====================
         if (sitenumber.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.siteNumber), Toast.LENGTH_SHORT).show();
             sitenumber.setError("This data is required");
@@ -251,7 +251,7 @@ public class SectionAActivity extends AppCompatActivity {
             sitenumber.setError(null);
         }
 
-        // =================== Q2 ====================
+        // =================== mr-number ====================
         if (mrnumber.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.mrnumber), Toast.LENGTH_SHORT).show();
             mrnumber.setError("This data is required");
@@ -271,7 +271,7 @@ public class SectionAActivity extends AppCompatActivity {
             r01.setError(null);
         }
 
-        // =================== Q4 ====================
+        // =================== Q2====================
         if (r02.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r02), Toast.LENGTH_SHORT).show();
             r0202.setError("This Data is required");
@@ -281,6 +281,7 @@ public class SectionAActivity extends AppCompatActivity {
             r0202.setError(null);
         }
 
+        // =================== Q3====================
         if (r03.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r03), Toast.LENGTH_SHORT).show();
             r03.setError("This data is required");
@@ -290,6 +291,7 @@ public class SectionAActivity extends AppCompatActivity {
             r03.setError(null);
         }
 
+        // =================== Q4====================
         if (r04.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r04), Toast.LENGTH_SHORT).show();
             r04.setError("This data is required");
@@ -331,6 +333,7 @@ public class SectionAActivity extends AppCompatActivity {
         }
 */
 
+        // =================== Q6====================
         if (r06.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r06), Toast.LENGTH_SHORT).show();
             r06.setError("This data is required");
@@ -434,7 +437,7 @@ public class SectionAActivity extends AppCompatActivity {
         if (r11.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r11), Toast.LENGTH_SHORT).show();
             r1102.setError("This Data is required");
-            Log.d(TAG, " r10 : not selected ");
+            Log.d(TAG, " r11 : not selected ");
             return false;
         } else {
             r1102.setError(null);
