@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:elevation="1dp"
                 android:gravity="center_horizontal"
-                android:text="CBT Child Recruitment"
+                android:text="Leap1: Randomization Worksheet"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 

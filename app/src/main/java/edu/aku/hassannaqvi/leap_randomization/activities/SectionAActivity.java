@@ -3,12 +3,16 @@ package edu.aku.hassannaqvi.leap_randomization.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -85,6 +89,10 @@ public class SectionAActivity extends AppCompatActivity {
     EditText r16;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.txtr08)
+    TextView txtr08;
+    @BindView(R.id.fldGrpr08)
+    LinearLayout fldGrpr08;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +105,32 @@ public class SectionAActivity extends AppCompatActivity {
         r06.setManager(getSupportFragmentManager());
         r06.setMaxDate(maxDate18Years);
 
+
+        r07.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (!r07.getText().toString().isEmpty()) {
+                    if (Integer.valueOf(r07.getText().toString()) >= 110 && Integer.valueOf(r07.getText().toString()) < 115) {
+                        fldGrpr08.setVisibility(View.VISIBLE);
+                    } else if (Integer.valueOf(r07.getText().toString()) < 110) {
+                        fldGrpr08.setVisibility(View.GONE);
+                        r08.setText(null);
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
 
@@ -355,31 +389,33 @@ public class SectionAActivity extends AppCompatActivity {
         if ((Integer.valueOf(r07.getText().toString().isEmpty() ? "0" : r07.getText().toString()) < 70)
                 || (Integer.valueOf(r07.getText().toString().isEmpty() ? "0" : r07.getText().toString()) > 115)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.r07), Toast.LENGTH_LONG).show();
-            r07.setError("Range is 70 g/L - 115 g/L ");
-            Log.d(TAG, "r07: Range is 70 g/L - 115 g/L days");
+            r07.setError("Range is 70 g/L - 110 g/L ");
+            Log.d(TAG, "r07: Range is 70 g/L - 110 g/L days");
             return false;
         } else {
             r07.setError(null);
         }
 
 
-        // =================== Q8 ====================
-        if (r08.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r08), Toast.LENGTH_SHORT).show();
-            r08.setError("This data is required");
-            Log.d(TAG, " r08 :empty ");
-            return false;
-        } else {
-            r08.setError(null);
-        }
+        if (Integer.valueOf(r07.getText().toString()) >= 110 && Integer.valueOf(r07.getText().toString()) < 115) {
+            // =================== Q8 ====================
+            if (r08.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.r08), Toast.LENGTH_SHORT).show();
+                r08.setError("This data is required");
+                Log.d(TAG, " r08 :empty ");
+                return false;
+            } else {
+                r08.setError(null);
+            }
 
-        if ((Integer.valueOf(r07.getText().toString()) <= 110) && (Integer.valueOf(r08.getText().toString()) > 20)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.r08), Toast.LENGTH_LONG).show();
-            r08.setError("Can not be less than 20 ug/L");
-            Log.d(TAG, "r08: Can not be less than 20 ug/L");
-            return false;
-        } else {
-            r08.setError(null);
+            if (Integer.valueOf(r08.getText().toString()) < 0 || Integer.valueOf(r08.getText().toString()) > 15) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.r08), Toast.LENGTH_LONG).show();
+                r08.setError("Range is 0 - 15 ug/L");
+                Log.d(TAG, "r08: Range is 0 - 15 ug/L");
+                return false;
+            } else {
+                r08.setError(null);
+            }
         }
 
 
