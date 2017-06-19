@@ -30,7 +30,7 @@
     <string name="r0502"> شوہر Husband</string>
     <string name="r0503"> PTCL گھر کا نمبر</string>
     <string name="r06">Mother’s Date of birth(must be ≥18 years) (ماں کی پیدائش کی تاریخ(18 سال یا زیادہ ہونا لازمی ہے  </string>
-    <string name="r07">ہیموگلوبن  (Haemoglobin (must be ≤115g/L and ≥70g/L </string>
+    <string name="r07">ہیموگلوبن  (Haemoglobin (must be ≤110g/L and ≥70g/L) </string>
     <string name="r0701">(g/L) </string>
     <string name="r08">If Hb ≤110g/L:Serum Ferritin(must be 20µg/L)   </string>
     <string name="r0801">(g/L) </string>
@@ -41,9 +41,9 @@
     <string name="r11"> کیا مریض کو دودھ یا فولاد کی مصنوعات سے الر جی ہے ؟(نہیں میں ہونا لازمی ہے) Does the patient have a known allergy to milk proteins or to iron products (must be no </string>
     <string name="r12">کیا پچھلے 30 دن کے دوران نس کے ذریعے آئرن کا ٹیکہ لگایا گیا ہے (نہیں میں ہونا لازمی ہے )   Has this patient had a prior treatment with intravenous iron within 30 days</string>
     <string name="Part2">Part 2 Randomization</string>
-    <string name="r13"> اندراج کی تاریخ </string>
-    <string name="r14"> اسٹیڈی نمبر </string>
-    <string name="r15"> عملہ کا نام جس نے مریض کو ترتیب دیا </string>
+    <string name="r13">Date of enrolment  اندراج کی تاریخ </string>
+    <string name="r14">Study Number    اسٹیڈی نمبر </string>
+    <string name="r15">Name of Staff Randomizing this patient عملہ کا نام جس نے مریض کو ترتیب دیا </string>
     <string name="r16">معالج کا نام جس نے اہلیت کو تصدیق کیا Name of Clinician confirming Eligibility</string>
 
     <!-- Strings related to login -->
