@@ -236,7 +236,14 @@
             android:inputType="number"
             android:maxLength="3" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpr08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtr08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -252,6 +259,8 @@
             android:hint="@string/r0801"
             android:inputType="number"
             android:maxLength="3" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
