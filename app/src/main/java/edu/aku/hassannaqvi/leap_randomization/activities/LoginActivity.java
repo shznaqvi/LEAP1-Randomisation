@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -64,7 +65,6 @@ import edu.aku.hassannaqvi.leap_randomization.R;
 import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
 import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
 import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
-
 
 
 import android.animation.Animator;
@@ -131,14 +131,20 @@ import edu.aku.hassannaqvi.leap_randomization.getclasses.GetUsers;
 
 import android.app.Activity;
 
-public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
+public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
+
+    /**
+     * A dummy authentication store containing known user names and passwords.
+     * TODO: check dbBackup.
+     */
+
 
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
 
-   private static final String[] DUMMY_CREDENTIALS = new String[]{
+    private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
     // District Spinner
@@ -178,6 +184,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+//        Get data from wrapper app
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            String user = b.getString("userName_from_wrapper");
+            AppMain.username = user;
+            finish();
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
+
 
         try {
             long installedOn = this
@@ -234,7 +250,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
         ucList = db.getAllUC();*/
 
         // Spinner Drop down elements
-      lables = new ArrayList<String>();
+        lables = new ArrayList<String>();
         lables.add("K. Abdullah");
         lables.add("Quetta");
         lables.add("Pishin");
@@ -331,7 +347,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
 //       DB backup
 
-       dbBackup();
+        dbBackup();
     }
 
     public void dbBackup() {
@@ -457,7 +473,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
             cancel = true;
         }*/
 
-      if (cancel) {
+        if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -485,7 +501,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
      */
 
 
-   @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
@@ -552,6 +568,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
     }
 
     public void gotoMain(View v) {
+        finish();
         Intent im = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(im);
     }
@@ -570,7 +587,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-  public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
@@ -615,7 +632,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
                         (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
                     AppMain.username = mEmail;
                     AppMain.admin = mEmail.contains("@");
-
+                    finish();
                     Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(iLogin);
 
