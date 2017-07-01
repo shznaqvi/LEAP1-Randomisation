@@ -1,10 +1,14 @@
 package edu.aku.hassannaqvi.leap_randomization.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -20,11 +24,13 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.leap_randomization.R;
+import edu.aku.hassannaqvi.leap_randomization.contracts.FormsContract;
 import edu.aku.hassannaqvi.leap_randomization.core.AppMain;
 import edu.aku.hassannaqvi.leap_randomization.core.DatabaseHelper;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -189,7 +195,7 @@ public class SectionAActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-      /*  long updcount = db.addForm(AppMain.fc);
+        long updcount = db.addForm(AppMain.fc);
 
         AppMain.fc.setID(String.valueOf(updcount));
 
@@ -202,14 +208,12 @@ public class SectionAActivity extends AppCompatActivity {
 
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        }*/
-
+        }
         return true;
-
     }
 
 
-   /* public void setGPS() {
+    public void setGPS() {
         SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
 
 //        String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
@@ -240,11 +244,20 @@ public class SectionAActivity extends AppCompatActivity {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
 
-    }*/
+    }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
 
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        AppMain.fc = new FormsContract();
+
+        AppMain.fc.setUserName(AppMain.username);
+        AppMain.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID));
+        AppMain.fc.setHhDT((DateFormat.format("dd-MM-yyyy HH:mm",new Date())).toString());
+        AppMain.fc.setTagId(sharedPref.getString("tagName", ""));
 
         JSONObject sa = new JSONObject();
 
@@ -266,9 +279,9 @@ public class SectionAActivity extends AppCompatActivity {
         sa.put("r11", r1101.isChecked() ? "1" : r1102.isChecked() ? "2" : "0");
         sa.put("r12", r1201.isChecked() ? "1" : r1202.isChecked() ? "2" : "0");
 
-        //  setGPS();
+          setGPS();
 
-        //  AppMain.fc.setsA(String.valueOf(sa));
+          AppMain.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
