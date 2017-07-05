@@ -262,7 +262,7 @@ public class SectionAActivity extends AppCompatActivity {
         JSONObject sa = new JSONObject();
 
         sa.put("sitenumber", sitenumber.getText().toString());
-        sa.put("MRnumber", mrnumber.getText().toString());
+        sa.put("mrnumber", mrnumber.getText().toString());
         sa.put("r01", r01.getText().toString());
         sa.put("r02", r0201.isChecked() ? "1" : r0202.isChecked() ? "2" : "0");
         sa.put("r03", r03.getText().toString());
