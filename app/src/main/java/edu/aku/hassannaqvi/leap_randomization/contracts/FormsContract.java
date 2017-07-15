@@ -30,20 +30,8 @@ public class FormsContract {
     private String iStatus = ""; // Form Status
     private String tagId = "";
     private String sA = "";
-    private String sB = "";
-    private String sC = "";
-    private String sD = "";
-    private String sE = "";
-    private String sF = "";
-    private String sG = "";
-    private String sH = "";
-    private String sI = "";
-    private String sJ = "";
-    private String sK = "";
-    private String sL = "";
-    private String sM = "";
-    private String sN = "";
-
+    private String sitenumber = "";
+    private String mrnumber = "";
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsTime = "";
@@ -70,19 +58,8 @@ public class FormsContract {
         this.userName = jsonObject.getString(singleForm.COLUMN_NAME_USERNAME);
         this.tagId = jsonObject.getString(singleForm.COLUMN_DEVICETAGID);
         this.sA = jsonObject.getString(singleForm.COLUMN_SA);
-        this.sB = jsonObject.getString(singleForm.COLUMN_SB);
-        this.sC = jsonObject.getString(singleForm.COLUMN_SC);
-        this.sD = jsonObject.getString(singleForm.COLUMN_SD);
-        this.sE = jsonObject.getString(singleForm.COLUMN_SE);
-        this.sF = jsonObject.getString(singleForm.COLUMN_SF);
-        this.sG = jsonObject.getString(singleForm.COLUMN_SG);
-        this.sH = jsonObject.getString(singleForm.COLUMN_SH);
-        this.sI = jsonObject.getString(singleForm.COLUMN_SI);
-        this.sJ = jsonObject.getString(singleForm.COLUMN_SJ);
-        this.sK = jsonObject.getString(singleForm.COLUMN_SK);
-        this.sL = jsonObject.getString(singleForm.COLUMN_SL);
-        this.sM = jsonObject.getString(singleForm.COLUMN_SM);
-        this.sN = jsonObject.getString(singleForm.COLUMN_SN);
+        this.sitenumber = jsonObject.getString(singleForm.COLUMN_Sitenumber);
+        this.mrnumber = jsonObject.getString(singleForm.COLUMN_Mrnumber);
         this.gpsLat = jsonObject.getString(singleForm.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(singleForm.COLUMN_GPSLNG);
         this.gpsTime = jsonObject.getString(singleForm.COLUMN_GPSTIME);
@@ -217,110 +194,6 @@ public class FormsContract {
         this.sA = sA;
     }
 
-    public String getsB() {
-        return sB;
-    }
-
-    public void setsB(String sB) {
-        this.sB = sB;
-    }
-
-    public String getsC() {
-        return sC;
-    }
-
-    public void setsC(String sC) {
-        this.sC = sC;
-    }
-
-    public String getsD() {
-        return sD;
-    }
-
-    public void setsD(String sD) {
-        this.sD = sD;
-    }
-
-    public String getsE() {
-        return sE;
-    }
-
-    public void setsE(String sE) {
-        this.sE = sE;
-    }
-
-    public String getsF() {
-        return sF;
-    }
-
-    public void setsF(String sF) {
-        this.sF = sF;
-    }
-
-    public String getsG() {
-        return sG;
-    }
-
-    public void setsG(String sG) {
-        this.sG = sG;
-    }
-
-    public String getsH() {
-        return sH;
-    }
-
-    public void setsH(String sH) {
-        this.sH = sH;
-    }
-
-    public String getsI() {
-        return sI;
-    }
-
-    public void setsI(String sI) {
-        this.sI = sI;
-    }
-
-    public String getsJ() {
-        return sJ;
-    }
-
-    public void setsJ(String sJ) {
-        this.sJ = sJ;
-    }
-
-    public String getsK() {
-        return sK;
-    }
-
-    public void setsK(String sK) {
-        this.sK = sK;
-    }
-
-    public String getsL() {
-        return sL;
-    }
-
-    public void setsL(String sL) {
-        this.sL = sL;
-    }
-
-    public String getsM() {
-        return sM;
-    }
-
-    public void setsM(String sM) {
-        this.sM = sM;
-    }
-
-    public String getsN() {
-        return sN;
-    }
-
-    public void setsN(String sN) {
-        this.sN = sN;
-    }
-
     public String getGpsLat() {
         return gpsLat;
     }
@@ -377,6 +250,22 @@ public class FormsContract {
         this.synced_date = synced_date;
     }
 
+    public String getSitenumber() {
+        return sitenumber;
+    }
+
+    public void setSitenumber(String sitenumber) {
+        this.sitenumber = sitenumber;
+    }
+
+    public String getMrnumber() {
+        return mrnumber;
+    }
+
+    public void setMrnumber(String mrnumber) {
+        this.mrnumber = mrnumber;
+    }
+
     public FormsContract hydrate(Cursor cursor) {
         this.ID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_ID));
         this.UID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_UID));
@@ -392,19 +281,8 @@ public class FormsContract {
         this.userName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_USERNAME));
         this.tagId = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_DEVICETAGID));
         this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
-        this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SB));
-        this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SC));
-        this.sD = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SD));
-        this.sE = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SE));
-        this.sF = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SF));
-        this.sG = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SG));
-        this.sH = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SH));
-        this.sI = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SI));
-        this.sJ = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SJ));
-        this.sK = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SK));
-        this.sL = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SL));
-        this.sM = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SM));
-        this.sN = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SN));
+        this.sitenumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_Sitenumber));
+        this.mrnumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_Mrnumber));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSLNG));
         this.gpsTime = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSTIME));
@@ -437,19 +315,8 @@ public class FormsContract {
         json.put(singleForm.COLUMN_NAME_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
         json.put(singleForm.COLUMN_DEVICETAGID, this.tagId == null ? JSONObject.NULL : this.tagId);
         json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
-        json.put(singleForm.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
-        json.put(singleForm.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
-        json.put(singleForm.COLUMN_SD, this.sD == null ? JSONObject.NULL : this.sD);
-        json.put(singleForm.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
-        json.put(singleForm.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
-        json.put(singleForm.COLUMN_SG, this.sG == null ? JSONObject.NULL : this.sG);
-        json.put(singleForm.COLUMN_SH, this.sH == null ? JSONObject.NULL : this.sH);
-        json.put(singleForm.COLUMN_SI, this.sI == null ? JSONObject.NULL : this.sI);
-        json.put(singleForm.COLUMN_SJ, this.sJ == null ? JSONObject.NULL : this.sJ);
-        json.put(singleForm.COLUMN_SK, this.sK == null ? JSONObject.NULL : this.sK);
-        json.put(singleForm.COLUMN_SL, this.sL == null ? JSONObject.NULL : this.sL);
-        json.put(singleForm.COLUMN_SM, this.sM == null ? JSONObject.NULL : this.sM);
-        json.put(singleForm.COLUMN_SN, this.sN == null ? JSONObject.NULL : this.sN);
+        json.put(singleForm.COLUMN_Sitenumber, this.sitenumber == null ? JSONObject.NULL : this.sitenumber);
+        json.put(singleForm.COLUMN_Mrnumber, this.mrnumber == null ? JSONObject.NULL : this.mrnumber);
         json.put(singleForm.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(singleForm.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(singleForm.COLUMN_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);
@@ -485,9 +352,8 @@ public class FormsContract {
 
     public static abstract class singleForm implements BaseColumns {
 
-        public static final String TABLE_NAME = "forms";
-        public static final String URI = "/syncforms.php";
-
+        public static final String TABLE_NAME = "rforms";
+        public static final String URI = "/syncrforms.php";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectname";
         public static final String COLUMN_SURVEY_TYPE = "surveytype";
@@ -505,19 +371,8 @@ public class FormsContract {
         public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_DEVICETAGID = "tagId";
         public static final String COLUMN_SA = "sa";
-        public static final String COLUMN_SB = "sb";
-        public static final String COLUMN_SC = "sc";
-        public static final String COLUMN_SD = "sd";
-        public static final String COLUMN_SE = "se";
-        public static final String COLUMN_SF = "sf";
-        public static final String COLUMN_SG = "sg";
-        public static final String COLUMN_SH = "sh";
-        public static final String COLUMN_SI = "si";
-        public static final String COLUMN_SJ = "sj";
-        public static final String COLUMN_SK = "sk";
-        public static final String COLUMN_SL = "sl";
-        public static final String COLUMN_SM = "sm";
-        public static final String COLUMN_SN = "sn";
+        public static final String COLUMN_Sitenumber = "sitenumber";
+        public static final String COLUMN_Mrnumber = "mrnumber";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSTIME = "gpstime";

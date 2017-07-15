@@ -252,17 +252,16 @@ public class SectionAActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         AppMain.fc = new FormsContract();
-
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         AppMain.fc.setHhDT((DateFormat.format("dd-MM-yyyy HH:mm",new Date())).toString());
         AppMain.fc.setTagId(sharedPref.getString("tagName", ""));
+        AppMain.fc.setSitenumber(sitenumber.getText().toString());
+        AppMain.fc.setMrnumber(mrnumber.getText().toString());
 
         JSONObject sa = new JSONObject();
 
-        sa.put("sitenumber", sitenumber.getText().toString());
-        sa.put("mrnumber", mrnumber.getText().toString());
         sa.put("r01", r01.getText().toString());
         sa.put("r02", r0201.isChecked() ? "1" : r0202.isChecked() ? "2" : "0");
         sa.put("r03", r03.getText().toString());
@@ -274,8 +273,8 @@ public class SectionAActivity extends AppCompatActivity {
         sa.put("r07", r07.getText().toString());
         sa.put("r08", r08.getText().toString());
         sa.put("r0901", r0901.getText().toString());
-        sa.put("r0901", r0902.getText().toString());
-        sa.put("r010", r1001.isChecked() ? "1" : r1002.isChecked() ? "2" : "0");
+        sa.put("r0902", r0902.getText().toString());
+        sa.put("r10", r1001.isChecked() ? "1" : r1002.isChecked() ? "2" : "0");
         sa.put("r11", r1101.isChecked() ? "1" : r1102.isChecked() ? "2" : "0");
         sa.put("r12", r1201.isChecked() ? "1" : r1202.isChecked() ? "2" : "0");
 

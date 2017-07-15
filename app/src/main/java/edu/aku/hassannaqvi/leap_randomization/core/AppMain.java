@@ -68,6 +68,8 @@ public class AppMain extends Application {
     public static Boolean VillageCodeFlag = true;
     public static String VillageName;
     public static String username = "";
+    public static String sitenumber = "";
+    public static String mrnumber = "";
     public static long installedOn;
     public static Integer versionCode;
     public static String versionName;
