@@ -191,7 +191,6 @@ public class SectionAActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
@@ -252,6 +251,7 @@ public class SectionAActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         AppMain.fc = new FormsContract();
+
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));

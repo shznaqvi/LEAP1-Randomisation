@@ -58,8 +58,8 @@ public class FormsContract {
         this.userName = jsonObject.getString(singleForm.COLUMN_NAME_USERNAME);
         this.tagId = jsonObject.getString(singleForm.COLUMN_DEVICETAGID);
         this.sA = jsonObject.getString(singleForm.COLUMN_SA);
-        this.sitenumber = jsonObject.getString(singleForm.COLUMN_Sitenumber);
-        this.mrnumber = jsonObject.getString(singleForm.COLUMN_Mrnumber);
+        this.sitenumber = jsonObject.getString(singleForm.COLUMN_SITENUMBER);
+        this.mrnumber = jsonObject.getString(singleForm.COLUMN_MRNUMBER);
         this.gpsLat = jsonObject.getString(singleForm.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(singleForm.COLUMN_GPSLNG);
         this.gpsTime = jsonObject.getString(singleForm.COLUMN_GPSTIME);
@@ -281,8 +281,8 @@ public class FormsContract {
         this.userName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_USERNAME));
         this.tagId = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_DEVICETAGID));
         this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
-        this.sitenumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_Sitenumber));
-        this.mrnumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_Mrnumber));
+        this.sitenumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SITENUMBER));
+        this.mrnumber = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MRNUMBER));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSLNG));
         this.gpsTime = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPSTIME));
@@ -314,9 +314,9 @@ public class FormsContract {
         json.put(singleForm.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
         json.put(singleForm.COLUMN_NAME_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
         json.put(singleForm.COLUMN_DEVICETAGID, this.tagId == null ? JSONObject.NULL : this.tagId);
-        json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
-        json.put(singleForm.COLUMN_Sitenumber, this.sitenumber == null ? JSONObject.NULL : this.sitenumber);
-        json.put(singleForm.COLUMN_Mrnumber, this.mrnumber == null ? JSONObject.NULL : this.mrnumber);
+        json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : new JSONObject(this.sA));
+        json.put(singleForm.COLUMN_SITENUMBER, this.sitenumber == null ? JSONObject.NULL : this.sitenumber);
+        json.put(singleForm.COLUMN_MRNUMBER, this.mrnumber == null ? JSONObject.NULL : this.mrnumber);
         json.put(singleForm.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(singleForm.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(singleForm.COLUMN_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);
@@ -371,8 +371,8 @@ public class FormsContract {
         public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_DEVICETAGID = "tagId";
         public static final String COLUMN_SA = "sa";
-        public static final String COLUMN_Sitenumber = "sitenumber";
-        public static final String COLUMN_Mrnumber = "mrnumber";
+        public static final String COLUMN_SITENUMBER = "sitenumber";
+        public static final String COLUMN_MRNUMBER = "mrnumber";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSTIME = "gpstime";
